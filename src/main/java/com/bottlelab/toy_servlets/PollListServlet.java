@@ -41,7 +41,7 @@ public class PollListServlet extends HttpServlet{
 
         // todo
         for(int i=0; i<questionsData.size();i++){
-            printWriter.println("<div class=''>"+ questionsData.get("Q"+(i+1)) +"</div>");
+            printWriter.println("<div class=''>"+(i+1)+". "+ questionsData.get("Q"+(i+1)) +"</div>");
             ArrayList<String> tempArray = setQuestion.get("Q"+(i+1));
             for(int k=0; k<tempArray.size();k++){
                 printWriter.println("<div class='form-check'><input name='Q+"+(i+1)+"' type='radio'>"+AnswersData.get(tempArray.get(k))+"</div>");
