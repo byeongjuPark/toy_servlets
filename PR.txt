@@ -17,7 +17,11 @@ https://github.com/yojulab/toy_JavaWithDB/blob/master/refs/survey_ddl.sql
 https://github.com/yojulab/toy_JavaWithDB/blob/master/refs/survey_dml.sql
 https://yojulab.github.io/learn_javascripts/browser_js/cases/polls/javascriptWithPoll.html
 --------
-1. SQL 연동
-2. DATA 정제
+1. SQL 연동 O
+2. DATA 정제 O
 3. 데이터 이동 구조 작성
+ - js -> 페이지 수 유지
+ - jsp -> 페이지 수 servelt 전달
+ - servlet -> 페이지에 맞게 파라메터(속성) 전달
+ - jsp -> 받아온 파라메터(속성) 출력
 4. 출력
