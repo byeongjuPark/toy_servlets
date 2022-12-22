@@ -32,7 +32,7 @@
         <%
             for(int i=0; i<example.size();i++){ %>
             <div>
-                <%= (String)example.get(i) %>
+                (<%= i+1 %>) <%= (String)example.get(i) %>
             </div>
            <% }
         %>
