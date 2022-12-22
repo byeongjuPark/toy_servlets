@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +15,7 @@
 <body>
 <% 
     HashMap<String, Object> question = (HashMap<String, Object>)request.getAttribute("question");
+    ArrayList<String> example = (ArrayList<String>)request.getAttribute("example");
 %>
 
     <div> 
@@ -26,9 +29,13 @@
         <%= question.get("ORDERS") %>. <%= question.get("QUESTIONS")%>
     </div>
     <div>
-        (1) 전혀 아니다
-        (2) 아니다
-        (3) 보통이다
+        <%
+            for(int i=0; i<example.size();i++){ %>
+            <div>
+                <%= (String)example.get(i) %>
+            </div>
+           <% }
+        %>
     </div>
 </body>
 

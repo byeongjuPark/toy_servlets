@@ -25,3 +25,35 @@ https://yojulab.github.io/learn_javascripts/browser_js/cases/polls/javascriptWit
  - servlet -> 페이지에 맞게 파라메터(속성) 전달
  - jsp -> 받아온 파라메터(속성) 출력
 4. 출력
+
+Apply spring-boot on html Container
+
+$ sudo apt-get update
+$ sudo apt install -y ca-certificates-java
+$ sudo apt-get install -y openjdk-17-jdk
+$ java -versioin
+openjdk version "17.0.5" ...
+$ cd ..
+$ bash
+wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+$ sudo tar xf ./apache-maven-3.8.6-bin.tar.gz -C /opt
+$ sudo ln -s /opt/apache-maven-3.8.6 /opt/maven
+$ export PATH=/opt/maven/bin:$PATH
+$ mvn --version
+Apache Maven 3.8.6 ...
+$ vi ~/.bashrc       # add PATH
+...                # press 'o'
+export PATH=/opt/maven/bin:$PATH
+:wq!
+$ . ~/.bashrc 
+$ mvn spring-boot:run
+@ Chagne Container port 8080
+
+
+use MySQL
+
+$ service mysql restart
+$ mysql -u root -p
+Enter password :          # just Enter
+mysql> GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '비밀번호';
+mysql> FLUSH PRIVILEGES;

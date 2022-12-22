@@ -3,6 +3,7 @@ package com.bottlelab.toy_servlets.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.bottlelab.toy_servlets.dao.PollWithDB;
@@ -24,16 +25,16 @@ public class DetailServlets extends HttpServlet {
         // biz with DB and Class
         PollWithDB pollWithDB = new PollWithDB();
         HashMap<String, Object> question = null;
+        ArrayList<String> example = null;
         try {
             question = pollWithDB.getQuestion(questions_Uid);
-            System.out.println(question.get("QUESTIONS_UID"));
-            System.out.println(question.get("QUESTIONS"));
-            System.out.println(question.get("ORDERS"));
+            example = pollWithDB.getExample(questions_Uid);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         // output with html
         request.setAttribute("question", question);
+        request.setAttribute("example", example);
         
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/polls/details.jsp");
         requestDispatcher.forward(request, response);
