@@ -31,9 +31,9 @@
     <div>
         <%
             for(int i=0; i<example.size();i++){ %>
-            <div>
+            <span>
                 (<%= i+1 %>) <%= (String)example.get(i) %>
-            </div>
+            </span>
            <% }
         %>
     </div>
